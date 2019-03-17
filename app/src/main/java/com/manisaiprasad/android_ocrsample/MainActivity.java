@@ -43,7 +43,7 @@ public class MainActivity extends AppCompatActivity {
     private static final String TAG = MainActivity.class.getSimpleName();
 
     private Uri imageUri;
-    private TextView detectedTextView;
+//    private TextView detectedTextView;
 
     @Override
     public void onRequestPermissionsResult(int requestCode,
@@ -118,8 +118,8 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        detectedTextView = (TextView) findViewById(R.id.detected_text);
-        detectedTextView.setMovementMethod(new ScrollingMovementMethod());
+//        detectedTextView = (TextView) findViewById(R.id.detected_text);
+//        detectedTextView.setMovementMethod(new ScrollingMovementMethod());
     }
 
     private void inspectFromBitmap(Bitmap bitmap) {
@@ -159,7 +159,7 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
 
-            detectedTextView.setText(detectedText);
+//            detectedTextView.setText(detectedText);
             Intent intent = new Intent(getBaseContext(), show.class);
             intent.putExtra("EXTRA_SESSION_ID", (CharSequence) detectedText);
             startActivity(intent);
