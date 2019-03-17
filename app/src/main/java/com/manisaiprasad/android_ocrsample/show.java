@@ -117,11 +117,11 @@ public class show extends AppCompatActivity {
             }
 
         }
-        if (panId != 1){
+        if (panId != 1) {
 
-            for (int i=0;i<lines.length;i++){
+            for (int i = 0; i < lines.length; i++) {
 
-                String Temp= lines[i];
+                String Temp = lines[i];
 
                 Pattern patternDLNumber = Pattern.compile("[A-Z]{2}[0-9]{14}");
 
@@ -131,38 +131,35 @@ public class show extends AppCompatActivity {
 
                 Pattern patternDLFName = Pattern.compile("(S/O[^#])");
 
-                Matcher matcherDLNumber = patternDLNumber .matcher(Temp);
+                Matcher matcherDLNumber = patternDLNumber.matcher(Temp);
 
-                Matcher matcherDLI = patternDLI .matcher(Temp);
+                Matcher matcherDLI = patternDLI.matcher(Temp);
 
-                Matcher matcherDLFName = patternDLFName .matcher(Temp);
+                Matcher matcherDLFName = patternDLFName.matcher(Temp);
 
-                if (matcherDLNumber .matches()) {
+                if (matcherDLNumber.matches()) {
 //                Toast.makeText(getApplicationContext(), Temp+" is you PAN Number",
 //                        Toast.LENGTH_LONG).show();
-                    panNumber=Temp;
+                    panNumber = Temp;
 
-                    idNum.setText("DL ID : "+panNumber);
+                    idNum.setText("DL ID : " + panNumber);
                     cardType.setText("Driving Licence");
 
-                    name.setText(lines[i+1]);
-                    fName.setText("Father's Name : "+lines[i+2].substring(3,lines[i+2].length()));
+                    name.setText(lines[i + 1]);
+                    fName.setText("Father's Name : " + lines[i + 2].substring(3, lines[i + 2].length()));
 
-                    dob.setText(lines[i+3]);
-
-
-
+                    dob.setText(lines[i + 3]);
 
 
                 }
 
-                if (matcherDLI .matches()) {
+                if (matcherDLI.matches()) {
 //                Toast.makeText(getApplicationContext(), Temp+" is you DOB ",
 //                        Toast.LENGTH_LONG).show();
-                    panDOB=Temp;
+                    panDOB = Temp;
 
                     String st = (String) dob.getText();
-                    dob.setText(st+"\nDate of Issued : "+panDOB);
+                    dob.setText(st + "\nDate of Issued : " + panDOB);
 
                 }
 
@@ -189,13 +186,13 @@ public class show extends AppCompatActivity {
 //                    }
 
 
-                }
+            }
 
 
-
-            }else{
-            all.setText(sessionId);
         }
+//            }else if(){
+//            all.setText(sessionId);
+//        }
 
         }
 //
